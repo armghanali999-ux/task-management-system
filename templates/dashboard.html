@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | TaskFlow{% endblock %}
+{% block content %}
+<header class="d-flex justify-content-between align-items-center"><div><h1>Dashboard</h1><p class="text-muted">Your work at a glance.</p></div><a class="btn btn-primary" href="/tasks/">Manage tasks</a></header>
+<div class="row g-3" data-dashboard>
+  <div class="col-md-3"><div class="card card-body"><small>Projects</small><strong class="display-6" id="project-count">0</strong></div></div>
+  <div class="col-md-3"><div class="card card-body"><small>Tasks</small><strong class="display-6" id="task-count">0</strong></div></div>
+  <div class="col-md-3"><div class="card card-body"><small>In progress</small><strong class="display-6" id="progress-count">0</strong></div></div>
+  <div class="col-md-3"><div class="card card-body"><small>Overdue</small><strong class="display-6 text-danger" id="overdue-count">0</strong></div></div>
+</div>
+<section class="mt-4"><h2>Recent activity</h2><div class="list-group" data-recent-activity></div></section>
+{% endblock %}

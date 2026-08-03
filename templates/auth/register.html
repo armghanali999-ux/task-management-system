@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Create account | TaskFlow{% endblock %}
+{% block content %}
+<section class="mx-auto" style="max-width: 36rem">
+  <h1>Create account</h1>
+  <form data-form="register" class="card card-body gap-3">
+    <div class="row"><label class="col">First name<input class="form-control" name="first_name"></label><label class="col">Last name<input class="form-control" name="last_name"></label></div>
+    <label>Email<input class="form-control" type="email" name="email" required></label>
+    <label>Password<input class="form-control" type="password" name="password" minlength="8" required></label>
+    <label>Confirm password<input class="form-control" type="password" name="password_confirm" minlength="8" required></label>
+    <button class="btn btn-primary" type="submit">Create account</button>
+    <div class="alert alert-danger mb-0" data-form-error hidden></div>
+  </form>
+</section>
+{% endblock %}

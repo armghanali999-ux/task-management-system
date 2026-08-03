@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Tasks | TaskFlow{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between"><div><h1>Tasks</h1><p class="text-muted">Prioritize and complete the work.</p></div><button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#task-form">New task</button></div>
+<form id="task-form" data-form="task" class="collapse card card-body mb-4 gap-2"><input class="form-control" name="title" placeholder="Task title" required><textarea class="form-control" name="description" placeholder="Description"></textarea><select class="form-select" name="project_id" data-project-options required><option value="">Select project</option></select><div class="row"><label class="col">Priority<select class="form-select" name="priority"><option>low</option><option selected>medium</option><option>high</option><option>critical</option></select></label><label class="col">Due date<input class="form-control" type="date" name="due_date"></label></div><button class="btn btn-success" type="submit">Create task</button><div class="alert alert-danger" data-form-error hidden></div></form>
+<div class="table-responsive"><table class="table align-middle"><thead><tr><th>Task</th><th>Status</th><th>Priority</th><th>Due</th></tr></thead><tbody data-task-list><tr><td colspan="4">Loading tasks…</td></tr></tbody></table></div>
+{% endblock %}

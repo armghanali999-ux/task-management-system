@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | TaskFlow{% endblock %}
+
+{% block content %}
+<section class="py-5 text-center">
+  <h1 class="display-4">Welcome to TaskFlow</h1>
+  <p class="lead">A modern task management system for focused teams.</p>
+  <div data-authenticated-nav hidden>
+    <p class="mt-4">Ready to manage your work?</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+      <a href="/dashboard/" class="btn btn-primary btn-lg">Go to Dashboard</a>
+      <a href="/projects/" class="btn btn-success btn-lg">View Projects</a>
+      <a href="/tasks/" class="btn btn-info btn-lg">View Tasks</a>
+    </div>
+  </div>
+  <div data-anonymous-nav>
+    <p class="mt-4">Sign in to start managing your projects and tasks.</p>
+    <a href="/login/" class="btn btn-primary btn-lg">Login</a>
+    <a href="/register/" class="btn btn-outline-primary btn-lg ms-2">Register</a>
+  </div>
+</section>
+
+<section class="tutorial-section mb-5" aria-labelledby="tutorial-heading">
+  <div class="row align-items-center g-4">
+    <div class="col-lg-4">
+      <span class="tutorial-eyebrow">Quick start</span>
+      <h2 id="tutorial-heading" class="mt-2">See how TaskFlow works</h2>
+      <p class="text-muted">
+        Watch the complete walkthrough to learn how to sign in, create projects,
+        organize tasks, add comments, and follow team activity.
+      </p>
+      <a href="/register/" class="btn btn-primary">Create your account</a>
+    </div>
+    <div class="col-lg-8">
+      <div class="tutorial-video-shell">
+        <video class="tutorial-video" controls preload="metadata" playsinline>
+          <source src="{% static 'videos/taskflow-complete-live-tutorial.mp4' %}" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row g-3" data-authenticated-nav hidden>
+  <div class="col-md-3"><div class="card text-center"><div class="card-body"><h2 class="h5">Projects</h2><p class="display-6" id="project-count">-</p></div></div></div>
+  <div class="col-md-3"><div class="card text-center"><div class="card-body"><h2 class="h5">Tasks</h2><p class="display-6" id="task-count">-</p></div></div></div>
+  <div class="col-md-3"><div class="card text-center"><div class="card-body"><h2 class="h5">In Progress</h2><p class="display-6" id="progress-count">-</p></div></div></div>
+  <div class="col-md-3"><div class="card text-center"><div class="card-body"><h2 class="h5">Overdue</h2><p class="display-6 text-danger" id="overdue-count">-</p></div></div></div>
+</div>
+{% endblock %}

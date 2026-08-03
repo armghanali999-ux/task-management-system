@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Projects | TaskFlow{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between"><div><h1>Projects</h1><p class="text-muted">Plan and track shared outcomes.</p></div><button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#project-form">New project</button></div>
+<form id="project-form" data-form="project" class="collapse card card-body mb-4 gap-2"><input class="form-control" name="title" placeholder="Project title" required><textarea class="form-control" name="description" placeholder="Description"></textarea><div class="row"><label class="col">Start date<input class="form-control" type="date" name="start_date"></label><label class="col">End date<input class="form-control" type="date" name="end_date"></label></div><button class="btn btn-success" type="submit">Create project</button><div class="alert alert-danger" data-form-error hidden></div></form>
+<div class="row g-3" data-project-list><p>Loading projects…</p></div>
+{% endblock %}

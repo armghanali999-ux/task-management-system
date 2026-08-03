@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block title %}Task | TaskFlow{% endblock %}
+{% block content %}<a href="/tasks/">← Tasks</a><article class="card card-body mt-3" data-task-detail><p>Loading task…</p></article><section class="mt-4"><h2>Comments</h2><form data-form="comment" class="input-group mb-3"><input class="form-control" name="content" placeholder="Add a comment" required><button class="btn btn-primary">Post</button></form><div class="list-group" data-comment-list></div></section>{% endblock %}

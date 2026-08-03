@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sign in | TaskFlow{% endblock %}
+
+{% block content %}
+<section class="login-layout">
+  <div class="row align-items-center g-4 g-xl-5">
+    <div class="col-lg-5">
+      <span class="tutorial-eyebrow">Welcome back</span>
+      <h1 class="mt-2">Sign in to TaskFlow</h1>
+      <p class="text-muted">Access your projects, tasks, comments, and team activity.</p>
+      <form data-form="login" class="card card-body gap-3">
+        <label>Email <input class="form-control" type="email" name="email" required autocomplete="email"></label>
+        <label>Password <input class="form-control" type="password" name="password" required autocomplete="current-password"></label>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+        <div class="alert alert-danger mb-0" data-form-error hidden></div>
+      </form>
+      <p class="mt-3 mb-0">New to TaskFlow? <a href="/register/">Create an account</a>.</p>
+    </div>
+    <div class="col-lg-7">
+      <div class="tutorial-video-shell">
+        <div class="px-3 pt-3">
+          <h2 class="h5 mb-1">First time here?</h2>
+          <p class="text-muted mb-3">Watch the tutorial before signing in.</p>
+        </div>
+        <video class="tutorial-video" controls preload="metadata" playsinline>
+          <source src="{% static 'videos/taskflow-complete-live-tutorial.mp4' %}" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

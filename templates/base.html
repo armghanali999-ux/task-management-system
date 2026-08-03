@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow project and task management system">
+  <title>{% block title %}TaskFlow{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">TaskFlow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ms-auto" data-authenticated-nav hidden>
+          <a class="nav-link" href="/dashboard/">Dashboard</a>
+          <a class="nav-link" href="/projects/">Projects</a>
+          <a class="nav-link" href="/tasks/">Tasks</a>
+          <a class="nav-link" href="/activity/">Activity</a>
+          <div class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle btn" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-user-email>Account</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+              <li><a class="dropdown-item" href="/profile/">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><button class="dropdown-item" type="button" data-action="logout">Logout</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="navbar-nav ms-auto" data-anonymous-nav>
+          <a class="nav-link" href="/login/">Login</a>
+          <a class="nav-link" href="/register/">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <main class="container mt-4">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+      <p class="text-muted mb-0">&copy; 2026 TaskFlow. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/frontend.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

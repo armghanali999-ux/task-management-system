@@ -1,0 +1,75 @@
+# Environment
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Database
+*.sqlite3
+*.sqlite
+db.sqlite3
+
+# Django
+*.log
+/media/
+/staticfiles/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Celery
+celerybeat-schedule
+
+# Testing
+.tox/
+.hypothesis/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Render
+.render/
+logs/
+# Local database tooling and runtime data
+.tools/
+.env
